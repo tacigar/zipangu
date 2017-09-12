@@ -25,3 +25,9 @@ zipangu_shoji.register_shoji("shoji_typeA", {
 	inventory_image = "zipangu_shoji_shoji_typeA_inv.png",
 	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
 })
+
+zipangu_shoji.register_tsuitate("tsuitate_typeA", {
+	tiles = {{ name = "zipangu_shoji_tsuitate_typeA.png", backface_culling = true }},
+	description = "Tsuitate Type A",
+	groups = { choppy = 2, oddly_breakable_by_hand = 2, flammable = 2 },
+})

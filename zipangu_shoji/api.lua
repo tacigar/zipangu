@@ -113,7 +113,7 @@ function zipangu_shoji.register_shoji(name, def)
 			minetest.set_node(poss[3], { name = name .. "_1", param2 = (dir + 2) % 4})
 			minetest.set_node(poss[4], { name = "zipangu_shoji:hidden" })
 			minetest.sound_play(default.node_sound_wood_defaults().place, { pos = pos })
-			
+
 			local meta
 			meta = minetest.get_meta(poss[1])
 			meta:set_string("position", "left")
@@ -224,6 +224,14 @@ end
 zipangu_shoji.register_fusuma = zipangu_shoji.register_shoji
 
 function zipangu_shoji.register_tsuitate(name, def)
+	if not name:find(":") then
+		name = "zipangu_shouji:" .. name
+	end
+	def.mesh = "zipangu_shoji_tsuitate.obj"
+	def.drawtype = "mesh"
+	def.paramtype2 = "facedir"
+	def.sounds = default.node_sound_wood_defaults()
+	minetest.register_node(":" .. name, def)
 end
 
 function zipangu_shoji.register_byobu(name, def)
